@@ -1,0 +1,22 @@
+PODS:
+  - LBTAComponents (1.0.3)
+
+DEPENDENCIES:
+  - LBTAComponents (from `https://github.com/jesus-rod/LBTAComponents`, branch `master`)
+
+EXTERNAL SOURCES:
+  LBTAComponents:
+    :branch: master
+    :git: https://github.com/jesus-rod/LBTAComponents
+
+CHECKOUT OPTIONS:
+  LBTAComponents:
+    :commit: 8600d16a43f15a8f5a3dd165cba24490f752e37b
+    :git: https://github.com/jesus-rod/LBTAComponents
+
+SPEC CHECKSUMS:
+  LBTAComponents: c35c49dcca4cda93ca303cd5c8fa2b2c2ad98a89
+
+PODFILE CHECKSUM: ee3a261e59fb6d29ae74a0fba29af898ebf582a7
+
+COCOAPODS: 1.5.3
