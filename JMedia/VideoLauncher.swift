@@ -13,11 +13,14 @@ import JMedia
 
 class VideoLauncher: NSObject {
 
-    var url: String?
+    // MARK: 🏡 Properties
+    private var url: URL
+    var videoPlayerView: VideoPlayerView
+
     var title: String?
     var subTitle: String?
     var mainView = UIView()
-    var videoPlayerView = VideoPlayerView(frame: .zero, urlString: "")
+
 
     let nameLabel: UILabel = {
         let label = UILabel()
@@ -56,6 +59,11 @@ class VideoLauncher: NSObject {
         button.tintColor = .white
         return button
     }()
+
+    init(url: URL) {
+        self.url = url
+        self.videoPlayerView = VideoPlayerView(frame: .zero, url: url)
+    }
 
     @objc func forceRotation() {
         let currentOrientation = UIDevice.current.orientation
@@ -144,8 +152,7 @@ class VideoLauncher: NSObject {
             print("WIDTH IS:", keyWindow.frame.width)
             print("HEIGHT IS:", keyWindow.frame.height)
 
-            guard let launcherUrl = url else { return }
-            videoPlayerView = VideoPlayerView(frame: videoPlayerFrame, urlString: launcherUrl)
+            videoPlayerView = VideoPlayerView(frame: videoPlayerFrame, url: url)
             mainView.addSubview(videoPlayerView)
             keyWindow.addSubview(mainView)
 

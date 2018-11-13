@@ -1,0 +1,41 @@
+opt_in_rules:
+  - unused_optional_binding
+  - no_extension_access_modifier
+  - force_cast
+  - force_try
+  - for_where
+  - file_length
+  - fatal_error_message
+  - force_unwrapping
+  - nimble_operator
+  - redundant_nil_coalescing
+  - overridden_super_call
+  - explicit_init
+  - empty_count
+  - closure_end_indentation	
+  - closure_spacing
+  - first_where
+  - number_separator
+  - object_literal
+  - operator_usage_whitespace
+  - prohibited_super_call 
+  - switch_case_on_newline
+  - weak_delegate
+disabled_rules: # rule identifiers to exclude from running
+  - nesting
+  - type_name
+  - line_length
+  - vertical_whitespace
+  - function_parameter_count
+  - unused_optional_binding
+  - discarded_notification_center_observer
+excluded: # paths to ignore
+  - Pods
+  - R.generated.swift
+
+# naming rules
+type_name:
+  min_length: 4
+  max_length: 50
+identifier_name:
+  min_length: 2

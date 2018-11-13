@@ -83,7 +83,7 @@ open class AudioRecorderViewController: UIViewController, AVAudioRecorderDelegat
 
 
         closeButton.anchor(mainView.topAnchor, left: mainView.leftAnchor, bottom: nil, right: nil, topConstant: 4, leftConstant: 4, bottomConstant: 0, rightConstant: 0, widthConstant: 44, heightConstant: 44)
-        saveButton.anchor(mainView.topAnchor, left: nil, bottom: nil, right:  mainView.rightAnchor, topConstant: 4, leftConstant: 0, bottomConstant: 0, rightConstant: 4, widthConstant: 100, heightConstant: 44)
+        saveButton.anchor(mainView.topAnchor, left: nil, bottom: nil, right: mainView.rightAnchor, topConstant: 4, leftConstant: 0, bottomConstant: 0, rightConstant: 4, widthConstant: 100, heightConstant: 44)
 
         pausePlayButton.anchorCenterSuperview()
         pausePlayButton.anchor(nil, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 80, heightConstant: 80)
@@ -143,7 +143,11 @@ open class AudioRecorderViewController: UIViewController, AVAudioRecorderDelegat
             audioRecorder?.delegate = self
             audioRecorder?.isMeteringEnabled = true
             audioRecorder?.record()
-            meterTimer = Timer.scheduledTimer(timeInterval: 0.1, target:self, selector:#selector(self.updateAudioMeter(timer:)), userInfo:nil, repeats:true)
+            meterTimer = Timer.scheduledTimer(timeInterval: 0.1,
+                                              target: self,
+                                              selector: #selector(self.updateAudioMeter(timer:)),
+                                              userInfo: nil,
+                                              repeats: true)
             //change target of button
             pausePlayButton.addTarget(self, action: #selector(playPauseRecording), for: .touchUpInside)
             pausePlayButton.setImage(#imageLiteral(resourceName: "ic_lapp_pause").withRenderingMode(.alwaysOriginal), for: .normal)
